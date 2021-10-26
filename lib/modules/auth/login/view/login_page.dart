@@ -30,8 +30,8 @@ class LoginPage extends StatelessWidget {
               child: RichText(
                 text: const TextSpan(
                   text: 'Mail',
-                  style: TextStyle(letterSpacing: 3, color: Colors.yellow, fontSize: 30),
-                  //style: DefaultTextStyle.of(context).style,
+                  style: TextStyle(
+                      letterSpacing: 3, color: Colors.yellow, fontSize: 30),
                   children: <TextSpan>[
                     TextSpan(
                       text: '.',
@@ -39,11 +39,12 @@ class LoginPage extends StatelessWidget {
                     TextSpan(
                         text: 'TM',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white70, fontSize: 30)),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white70,
+                            fontSize: 30)),
                   ],
                 ),
-              )
-          ),
+              )),
           Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.all(5),
@@ -68,7 +69,7 @@ class LoginPage extends StatelessWidget {
           ),
           Container(
             padding:
-            const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
+                const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
             child: TextField(
               obscureText: true,
               controller: password,
@@ -91,7 +92,7 @@ class LoginPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(300, 42),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(22))),
+                        borderRadius: BorderRadius.circular(6))),
                 child: const Text(
                   'Login',
                   style: TextStyle(letterSpacing: 3),

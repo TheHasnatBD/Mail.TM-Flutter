@@ -15,14 +15,6 @@ import 'package:mailtm/modules/auth/login/model/login_response.dart';
 class LoginController extends GetxController{
   var isLoading = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-
-  }
-
-
-  // metalunits.com
   void logIn(String email, String password) async{
     try{
       if(email.isEmpty || password.isEmpty){
@@ -56,17 +48,11 @@ class LoginController extends GetxController{
             print("log in Error");
           }
           this.isLoading.value = false;
-
         }
       }
-
     } catch(e){
       print("error= $e");
     }
-
-
   }
-
-
 
 }

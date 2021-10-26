@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:mailtm/app/util/data_services.dart';
 import 'package:mailtm/modules/domains/model/domain_response.dart';
 
-
 class DomainController extends GetxController{
   var domainResponse = DomainResponse().obs;
   var domainList = <HydraMember>[].obs;
@@ -32,8 +31,6 @@ class DomainController extends GetxController{
     } catch(e){
       print("error= $e");
     }
-
-
   }
 
 

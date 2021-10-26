@@ -23,7 +23,6 @@ class DomainPage extends StatelessWidget {
             text: const TextSpan(
               text: 'Mail',
               style: TextStyle(letterSpacing: 3, color: Colors.yellow),
-              //style: DefaultTextStyle.of(context).style,
               children: <TextSpan>[
                 TextSpan(
                   text: '.',
@@ -46,7 +45,6 @@ class DomainPage extends StatelessWidget {
             return ListTile(
               onTap: () {
                 var token = Helper.getPreferenceValue(key: Constants.TOKEN_KEY);
-                print("token= $token");
                 if(token == null || token == ""){
                   Get.toNamed(AppRoutes.REGISTER, arguments: {
                     Constants.DOMAIN_KEY: object.domain!

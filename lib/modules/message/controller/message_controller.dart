@@ -16,13 +16,11 @@ class MessageController extends GetxController{
   @override
   void onInit() {
     super.onInit();
-
     var token = Helper.getPreferenceValue(key: Constants.TOKEN_KEY);
     if(token == null || token == ""){
       print("null token");
       Get.back();
     }
-
     fetchMessagesHydra();
   }
 

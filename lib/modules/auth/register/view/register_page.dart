@@ -19,7 +19,7 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _emailSuffix = "@"+domain;
+    var _emailSuffix = "@" + domain;
 
     return Obx(() {
       return Scaffold(
@@ -35,8 +35,8 @@ class RegisterPage extends StatelessWidget {
               child: RichText(
                 text: const TextSpan(
                   text: 'Mail',
-                  style: TextStyle(letterSpacing: 3, color: Colors.yellow, fontSize: 30),
-                  //style: DefaultTextStyle.of(context).style,
+                  style: TextStyle(
+                      letterSpacing: 3, color: Colors.yellow, fontSize: 30),
                   children: <TextSpan>[
                     TextSpan(
                       text: '.',
@@ -44,11 +44,12 @@ class RegisterPage extends StatelessWidget {
                     TextSpan(
                         text: 'TM',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white70, fontSize: 30)),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white70,
+                            fontSize: 30)),
                   ],
                 ),
-              )
-          ),
+              )),
           Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.all(5),
@@ -60,7 +61,8 @@ class RegisterPage extends StatelessWidget {
             height: 30,
           ),
           Container(
-            padding: const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
+            padding:
+                const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
             child: TextField(
               controller: address,
               decoration: InputDecoration(
@@ -73,7 +75,8 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
+            padding:
+                const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
             child: TextField(
               enabled: _controller.isLoading.value ? false : true,
               //obscureText: true,
@@ -91,8 +94,8 @@ class RegisterPage extends StatelessWidget {
                   height: 40,
                 ),
           Container(
-              padding: const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
-
+              padding: const EdgeInsets.only(
+                  left: 25, right: 25, top: 10, bottom: 10),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(300, 42),
@@ -103,14 +106,15 @@ class RegisterPage extends StatelessWidget {
                   style: TextStyle(letterSpacing: 3),
                 ),
                 onPressed: () {
-                  _controller.isLoading.value ? null :
-                  _controller.createAccount(address.text.trim(), _emailSuffix, password.text.trim());
+                  _controller.isLoading.value
+                      ? null
+                      : _controller.createAccount(address.text.trim(),
+                          _emailSuffix, password.text.trim());
                 },
               )),
           const SizedBox(
             height: 10,
           ),
-
           TextButton(
             child: const Text(
               'Have an account? Sign In',

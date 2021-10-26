@@ -15,13 +15,6 @@ import 'package:mailtm/modules/auth/register/model/registration_response.dart';
 class RegisterController extends GetxController{
   var isLoading = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-
-  }
-
-
   void createAccount(String userName, String suffixDomain, String password) async{
     try{
       var email = userName + suffixDomain;
@@ -37,7 +30,6 @@ class RegisterController extends GetxController{
         Helper.showSimpleSnackBar(msg: "Minimum 6 digit password required");
         return;
       } else {
-
         this.isLoading.value = true;
         var data = await DataServices().createNewAccount(email, password);
         if (data != null) {
@@ -57,8 +49,6 @@ class RegisterController extends GetxController{
     } catch(e){
       print("error= $e");
     }
-
-
   }
 
 
