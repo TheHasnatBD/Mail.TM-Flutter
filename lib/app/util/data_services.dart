@@ -18,10 +18,10 @@ class DataServices{
   static var headersJson = <String, String>{
     'Content-Type': 'application/json',
   };
-  static var headersIdJson = <String, String>{
+  static var headersLdJson = <String, String>{
     'Content-Type': 'application/ld+json',
   };
-  static var headersIdJsonWithToken = <String, String>{
+  static var headersLdJsonWithToken = <String, String>{
     'Content-Type': 'application/ld+json',
     'Authorization': 'Bearer ${Helper.getPreferenceValue(key: Constants.TOKEN_KEY)}',
   };
@@ -59,8 +59,8 @@ class DataServices{
       Helper.showSimpleSnackBar(msg: "Invalid input");
       return "Invalid input";
     } else if (response.statusCode == 422) {
-      Helper.showSimpleSnackBar(msg: "Unprocessable entity");
-      return "Unprocessable entity";
+      Helper.showSimpleSnackBar(msg: "Unprocessed entity");
+      return "Unprocessed entity";
     } else {
       print("Error= ${response.statusCode}, ${response.body}");
       Helper.showSimpleSnackBar(msg: "Unknown error");
@@ -98,7 +98,7 @@ class DataServices{
   Future<MessageResponse?> getHydraMessages() async {
     var response = await client.get(
         Uri.parse(Constants.MESSAGE_LIST_API),
-        headers: headersIdJsonWithToken
+        headers: headersLdJsonWithToken
     );
     if (response.statusCode == 200 || response.statusCode == 201) {
       var jsonString = response.body;
