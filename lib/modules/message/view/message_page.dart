@@ -90,7 +90,7 @@ class MessagePage extends StatelessWidget {
                       );
                     },
                   )
-                : const Text("You have no messages")),
+                : const Center(child: Text("You have no messages", style: TextStyle(fontSize: 15),))),
       );
     });
   }
